@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button, TextField } from '@material-ui/core';
+import { Button, Divider, TextField } from '@material-ui/core';
 import { useSearch } from '..';
+import Tables from './Tables';
 import SearchIcon from '@material-ui/icons/Search';
 function Search({ documents, searchText, docSetId, verbose, onBlur }) {
-  console.log({ documents, searchText, docSetId, verbose, onBlur });
   const [label, setLabel] = useState('');
   const [startImport, setStartImport] = useState(false);
   const [startSearch, setStartSearch] = useState(false);
@@ -23,8 +23,6 @@ function Search({ documents, searchText, docSetId, verbose, onBlur }) {
     docSetId: startSearch ? docSetId : '',
     verbose,
   });
-  console.log({ startSearch });
-  console.log({ startImport });
 
   console.log(dataArray);
   return (
@@ -41,6 +39,10 @@ function Search({ documents, searchText, docSetId, verbose, onBlur }) {
       <Button onMouseUp={handleClick} variant="outlined">
         <SearchIcon />
       </Button>
+      <p />
+      <Divider />
+      <p />
+      <Tables dataArray={dataArray} />
     </>
   );
 }
