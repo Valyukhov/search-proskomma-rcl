@@ -21,8 +21,7 @@ const documents = [
   document({ bookCode: '3jn', bookName: '3 Jean', chapterCount: 1 }),
 ];
 const docSetId = `unfoldingWord/lat_lor`;
-const [searchText, setSearchText] = useState('');
-// const _searchText = 'adipisicing excepteur fugiat';
+const [searchText, setSearchText] = useState('adipisicing excepteur fugiat');
 
 const verbose = true;
 function Component() {
