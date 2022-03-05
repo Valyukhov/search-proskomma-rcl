@@ -10,7 +10,12 @@ function Component() {
   const bookCodes = ['tit', 'rut', '1ti'];
   const { projects, usfms } = useFetchUsfm({ owner, repo, server, bookCodes });
 
-  return <div>{usfms && usfms.length}</div>;
+  return (
+    <>
+      <div>Projects : {projects && projects.length}</div>
+      <div>USFMs : {usfms && usfms.length}</div>
+    </>
+  );
 }
 <Component />;
 ```
