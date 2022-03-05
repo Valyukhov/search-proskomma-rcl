@@ -73,6 +73,7 @@
     "axios": "^0.26.0",
     "js-yaml": "^4.1.0",
     "lorem-ipsum-usfm": "^0.3.2",
-    "proskomma-react-hooks": "^1.7.7"
+    "proskomma-react-hooks": "^1.7.7",
+    "use-deep-compare": "^1.1.0"
   }
 }
