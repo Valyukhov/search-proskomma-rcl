@@ -70,7 +70,10 @@
   },
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.26.0",
+    "js-yaml": "^4.1.0",
     "lorem-ipsum-usfm": "^0.3.2",
-    "proskomma-react-hooks": "^1.7.7"
+    "proskomma-react-hooks": "^1.7.7",
+    "yaml": "^1.10.2"
   }
 }

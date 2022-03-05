@@ -24,7 +24,6 @@ function Search({ documents, searchText, docSetId, verbose, onBlur }) {
     verbose,
   });
 
-  console.log(dataArray);
   return (
     <>
       <TextField

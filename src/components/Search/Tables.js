@@ -34,7 +34,7 @@ export default function Tables({ dataArray }) {
       matches: el.docSet.document.cvMatching,
     };
   });
-  console.log({ rows });
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">

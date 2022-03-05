@@ -14,6 +14,10 @@ let sections = [
       'src/components/Search/Search.js',
     ],
   },
+  {
+    name: 'Content Block',
+    components: ['src/components/useFetchUsfm/useFetchUsfm.js'],
+  },
 ];
 
 module.exports = {
