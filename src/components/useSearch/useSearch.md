@@ -35,23 +35,34 @@ function Component() {
   console.log(dataArray);
   const tableMatches = (
     <table>
-      {dataArray.map((el, i) => {
-        return (
-          <tr key={i}>
-            <td>{el.docSet.document.bookCode}</td>
-            <td>{el.docSet.document.cvMatching.length + ' matches'}</td>
-            <td>
-              {el.docSet.document.cvMatching.map((element, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{element.text.substr(0, 20) + '...'}</td>
-                  </tr>
-                );
-              })}
-            </td>
-          </tr>
-        );
-      })}
+      {dataArray.length > 0 &&
+        dataArray.map((el, i) => {
+          const bookCode =
+            el && el.docSet && el.docSet.document && el.docSet.document.bookCode;
+          const length =
+            el &&
+            el.docSet &&
+            el.docSet.document &&
+            el.docSet.document.cvMatching.length + ' matches';
+          const arr =
+            el && el.docSet && el.docSet.document && el.docSet.document.cvMatching;
+          return (
+            <tr key={i}>
+              <td>{bookCode}</td>
+              <td>{length}</td>
+              <td>
+                {arr &&
+                  arr.map((element, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>{element.text.substr(0, 20) + '...'}</td>
+                      </tr>
+                    );
+                  })}
+              </td>
+            </tr>
+          );
+        })}
     </table>
   );
 
