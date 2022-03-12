@@ -22,7 +22,7 @@ function Component() {
     <>
       <button onClick={() => setStartFetch(true)}>Fetch USFM</button>
       <div>Projects : {projects && projects.length}</div>
-      <div>USFMs : {usfms && usfms.length}</div>
+      <div>USFMs : {usfms && Object.keys(usfms).length}</div>
     </>
   );
 }

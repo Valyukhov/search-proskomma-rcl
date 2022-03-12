@@ -31,7 +31,7 @@ function useFetchUsfm({ input, owner, repo, server, bookCodes }) {
   }, [bookCodes, projects]);
 
   useDeepCompareEffect(() => {
-    const _usfm = [];
+    const _usfm = {};
 
     const getProjects = async () => {
       await Promise.all(
@@ -43,13 +43,13 @@ function useFetchUsfm({ input, owner, repo, server, bookCodes }) {
               )}`
             )
             .then((data) => {
-              _usfm.push({ id: project.identifier, usfm: data.data });
+              _usfm[project.identifier] = data.data;
             })
             .catch((err) => console.log(err))
         )
       );
-
-      if (_usfm.length === bookCodes.length) {
+      // console.log({ _usfm });
+      if (Object.keys(_usfm).length === bookCodes.length) {
         setUsfms(_usfm);
       }
     };
