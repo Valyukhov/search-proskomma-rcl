@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { useProskomma, useImport, useSearchForPassages } from 'proskomma-react-hooks';
 
 function useSearch({ documents, searchText, docSetId, verbose }) {
-  console.log({ documents });
   const {
     stateId,
     newStateId,

@@ -18,9 +18,6 @@ function Component() {
     server,
     bookCodes: _bookCodes,
   });
-  useDeepCompareEffect(() => {
-    if (usfms) console.log({ usfms });
-  }, [usfms]);
 
   return (
     <>

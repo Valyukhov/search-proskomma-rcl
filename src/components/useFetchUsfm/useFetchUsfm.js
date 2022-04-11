@@ -15,13 +15,12 @@ function useFetchUsfm({ input, owner, repo, server, bookCodes }) {
       .get(link)
       .then((res) => {
         const json = res.data ? YAML.load(res.data) : null;
-        // console.log(json.projects);
+
         setProjects(json.projects);
       })
       .catch((err) => console.log(err));
   }, [link]);
   useDeepCompareEffect(() => {
-    console.log(bookCodes);
     const _projects = projects.filter((project) => {
       if (bookCodes) {
         return bookCodes.includes(project.identifier);
@@ -48,7 +47,7 @@ function useFetchUsfm({ input, owner, repo, server, bookCodes }) {
             .catch((err) => console.log(err))
         )
       );
-      // console.log({ _usfm });
+
       if (Object.keys(_usfm).length === bookCodes.length) {
         setUsfms(_usfm);
       }

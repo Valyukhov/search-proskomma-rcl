@@ -11,7 +11,7 @@ let sections = [
     name: 'Search Block',
     components: [
       'src/components/useSearch/useSearch.js',
-      'src/components/Search/Search.js',
+      // 'src/components/Search/Search.js',
     ],
   },
   {
