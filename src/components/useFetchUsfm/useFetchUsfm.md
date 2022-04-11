@@ -1,5 +1,6 @@
 ```jsx
 import React, { useState, useEffect } from 'react';
+import { useDeepCompareEffect } from 'use-deep-compare';
 
 import { useFetchUsfm } from '@texttree/search-proskomma-rcl';
 
@@ -17,6 +18,9 @@ function Component() {
     server,
     bookCodes: _bookCodes,
   });
+  useDeepCompareEffect(() => {
+    if (usfms) console.log({ usfms });
+  }, [usfms]);
 
   return (
     <>
